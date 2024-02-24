@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+<header>
+    <h1> <a href="{{ url_for("view_welcome_page") }}"> E Bikes Orava </a></h1>
+</header>
+
+<nav>
+    <li> <a href="{{ url_for("view_about")}}">About</a> </li>
+    <li> <a href="{{ url_for("view_articles")}}">Articles</a> </li>
+    <li> <a href="#">O nás</a>
+    <li> <a href="{{ url_for("view_admin")}}">Admin</a> </li>
+</nav>
+
+<main>
+     {% block main %} {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024 Môj Blog. Všetky práva vyhradené.</p>
+</footer>
+
+</body>
+</html>
