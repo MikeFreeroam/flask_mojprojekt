@@ -5,13 +5,14 @@
 {% block main %}
 
 <form action="{{ url_for('login_user') }}" method="post">
+    {{ form.csrf_token }}
     <p>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
+         {{ form.username.label }}
+         {{ form.username() }}
     </p>
     <p>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
+        {{ form.password.label }}
+        {{ form.password() }}
     </p>
     <input type="submit" value="login">
 </form>
